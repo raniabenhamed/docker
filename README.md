@@ -34,9 +34,4 @@ MonProjet/
 └── .gitignore         # Fichiers à ignorer pour le versioning
 
 
-Manage volumes:
-List volumes:
-# docker volume ls
 
-Inspect volume:
-# docker volume inspect xvolume
