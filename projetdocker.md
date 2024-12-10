@@ -57,12 +57,37 @@ nano Dockerfile
  Dans le Dockerfile
 ```
 FROM debian:bullseye
-RUN apt-get update && apt-get install -y openssh-server sudo nano
+
+# Installation des dépendances
+RUN apt-get update && apt-get install -y \
+  openssh-server \
+  sudo \
+  nano
+
+# Création du répertoire pour le service SSH
 RUN mkdir /var/run/sshd
+
+# Création d'un utilisateur et configuration du mot de passe
+RUN useradd -m -s /bin/bash appuser && echo "appuser:apppassword" | chpasswd
+
+# Configuration des droits pour l'utilisateur
+RUN echo 'appuser ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
+
+# Configuration du mot de passe root
 RUN echo 'root:root123' | chpasswd
+
+# Autoriser l'accès SSH
 RUN sed -i 's/PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
+
+# Permettre l'accès SSH avec l'utilisateur appuser
+RUN sed -i 's/AllowUsers$/AllowUsers appuser/' /etc/ssh/sshd_config
+
+# Redirection du port SSH (choisir un autre port si 22 est déjà utilisé)
 EXPOSE 2222
+
+# Démarrage du service SSH
 CMD ["/usr/sbin/sshd", "-D"]
+
 ```
 Construire et tester
 ```
