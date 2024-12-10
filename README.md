@@ -15,23 +15,6 @@ Ce projet a pour but de mettre en place un environnement Docker et WSL (Windows 
 - WSL (Windows Subsystem for Linux)
 - Docker installé et fonctionnel
 
-## Installation et configuration rapide
-Consultez le [guide d'installation](docs/guide_installation.md) pour une procédure détaillée.
-
-## Utilisation
-Après l'installation, vous pouvez consulter le [guide d'utilisation](docs/guide_utilisation.md) pour explorer les différentes fonctionnalités du projet.
-
-## Structure du projet
-```plaintext
-MonProjet/
-├── README.md          # Description et guide du projet
-├── Dockerfile         # Fichier Docker pour les conteneurs personnalisés
-├── scripts/           # Scripts Bash pour automatiser certaines tâches
-├── docs/              # Documentation détaillée
-│   ├── guide_installation.md
-│   └── guide_utilisation.md
-├── config/            # Fichiers de configuration (ex. .bashrc modifié)
-└── .gitignore         # Fichiers à ignorer pour le versioning
 
 
 
