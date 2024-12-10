@@ -1,0 +1,29 @@
+# Projet Docker et WSL
+
+## Description
+J'ai choisi de le faire 
+
+
+### 1 Activation de WSL
+1. Ouvrir un terminal administrateur et exécuter :
+   dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+   dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+
+1.2  Redémarrer l'ordinateur
+
+## 2 Installer Ubuntu
+
+```bash
+wsl --install -d Ubuntu
+sudo apt update && sudo apt upgrade
+
+## 3 Installer Docker 
+Suivre la doc de Docker 
+```bash
+docker --version
+
+## 3 Utilisation
+```
+docker run hello-world
+
+
