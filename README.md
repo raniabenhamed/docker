@@ -10,10 +10,7 @@ Ce projet a pour but de mettre en place un environnement Docker et WSL (Windows 
 4. Utilisation et gestion des volumes Docker pour la persistance des données.
 5. Ajout d'alias pratiques pour faciliter l'utilisation de Docker.
 
-## Prérequis
-- **Windows 10/11**
-- WSL (Windows Subsystem for Linux)
-- Docker installé et fonctionnel
+
 
 
 
